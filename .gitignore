@@ -1,0 +1,6 @@
+*.bak
+*.swp
+backup/
+data/
+logs/
+tmp/
