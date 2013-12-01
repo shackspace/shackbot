@@ -4,3 +4,6 @@ backup/
 data/
 logs/
 tmp/
+conf/
+ShackleBot.conf
+*.pyc
