@@ -1,0 +1,4 @@
+shackbot
+========
+
+#shackspace supybot
