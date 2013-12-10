@@ -40,7 +40,7 @@ class Stoll(callbacks.Plugin):
     """Call on Dr. Axel Stoll by writing .stoll"""
 
 
-    __init__(self, irc):
+    def __init__(self, irc):
         self.__parent__ = super(Stoll, self)
         self.__parent__.__init__(irc)
 
