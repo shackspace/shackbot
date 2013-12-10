@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 ###
 # Copyright (c) 2013, rixx
 # All rights reserved.
@@ -95,6 +96,7 @@ class Stoll(callbacks.Plugin):
         
         def stoll(self, irc, msg, args):
             irc.reply(random.choice(self.quotes))
+        stoll = wrap(stoll)
         
 Class = Stoll
 
