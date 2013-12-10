@@ -39,7 +39,7 @@ class GladosConnect(callbacks.Plugin):
 	def __init__(self, irc):
 		self.__parent = super(GladosConnect, self)
 		self.__parent.__init__(irc)
-		r = redis.Redis(host='glados.shack')
+		r = redis.Redis()
 		self.redis = r
 		client = RedisListener(irc, r, ['!bot'])
 		client.start()
