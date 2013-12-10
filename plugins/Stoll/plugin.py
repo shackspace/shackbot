@@ -28,7 +28,8 @@ class Stoll(callbacks.Plugin):
 
         returns a helpful quote by Dr. Axel Stoll
         """
-        irc.reply(random.choice(stoll_quotes) + " -- Dr. Axel Stoll")
+        irc.reply(random.choice(stoll_quotes) + " -- Dr. Axel Stoll",
+                prefixNick=False)
     stoll = wrap(stoll)
 
 
@@ -37,7 +38,7 @@ class Stoll(callbacks.Plugin):
 
         returns a helpful quote by GlaDOS
         """
-        irc.reply(random.choice(glados_quotes) + " -- GlaDOS")
+        irc.reply(random.choice(glados_quotes) + " -- GlaDOS", prefixNick=False)
     glados = wrap(glados)
 
 
