@@ -32,6 +32,9 @@ from supybot.test import *
 
 class StollTestCase(PluginTestCase):
     plugins = ('Stoll',)
-
+    
+    def testStoll(self):
+        # difficult to test, let's just make sure it works
+        self.assertNotError('random')
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:
