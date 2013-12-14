@@ -27,7 +27,7 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is open
         """
-        if "open" in get_shack_status():
+        if "open" in self.get_shack_status():
             irc.reply("shack is open", prefixNick=False)
         else:
             irc.reply("shack is not open", prefixNick=False)
@@ -39,7 +39,7 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is closed
         """
-        if "close" in get_shack_status():
+        if "close" in self.get_shack_status():
             irc.reply("shack is closed", prefixNick=False)
         else:
             irc.reply("shack is not closed", prefixNick=False)
