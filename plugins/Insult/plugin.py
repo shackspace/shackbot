@@ -15,8 +15,9 @@ import supybot.callbacks as callbacks
 import random
 
 class Insult(callbacks.Plugin):
-    """Add the help for "@plugin help Insult" here
-    This should describe *how* to use this plugin."""
+    """Are others in a channel really stupid/annoying/not exactly like you want
+    them to be? .insult <nick> finds a creative Shakespearean insult for that
+    person and delivers it directly in the channel. """
 
     def __init__(self, irc):
         self.__parent = super(Insult, self)
