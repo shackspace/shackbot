@@ -17,7 +17,7 @@ def configure(advanced):
     conf.registerPlugin('Stoll', True)
 
 
-Stoll = conf.registerPlugin('Stoll')
+Open = conf.registerPlugin('Open')
 # This is where your configuration variables (if any) should go.  For example:
 # conf.registerGlobalValue(Stoll, 'someConfigVariableName',
 #     registry.Boolean(False, """Help for someConfigVariableName."""))

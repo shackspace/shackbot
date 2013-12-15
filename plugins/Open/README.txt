@@ -1,1 +1,1 @@
-Insert a description of your plugin here, with any notes, etc. about using it.
+Open (with .open and .close) returns the current state of the stuttgart hackerspace.

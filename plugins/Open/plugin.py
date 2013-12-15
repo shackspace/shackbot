@@ -15,8 +15,8 @@ import supybot.callbacks as callbacks
 from urllib2 import urlopen
 
 class Open(callbacks.Plugin):
-    """Add the help for "@plugin help Stoll" here
-    This should describe *how* to use this plugin."""
+    """.open and .close give the status of the stuttgart hackerspace
+    reads http://shackspace.de/sopen/text/en"""
 
     def __init__(self, irc):
         self.__parent = super(Open, self)
