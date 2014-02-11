@@ -76,7 +76,7 @@ class Plenum(callbacks.Plugin):
 
     def get_plenum_date(self):
         raw = urlopen("http://shackspace.de/nextplenum/text/iso").read()[:10]
-        plenum_date = date(int(raw[:4]), int(raw[6:7]), int(raw[9:10]))
+        plenum_date = date(int(raw[:4]), int(raw[5:7]), int(raw[8:10]))
 
         return plenum_date
 
