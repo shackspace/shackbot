@@ -56,6 +56,8 @@ class Plenum(callbacks.Plugin):
 
         if delta == 0:
             reply_string = "Heute ist Plenum!"
+        elif delta == 1:
+            reply_string = "Morgen ist Plenum!"
         else:
             reply_string = "Das nächste Plenum ist in " + str(delta) + " Tagen, "
             reply_string += "am " + datum.strftime("%d.%m.")
