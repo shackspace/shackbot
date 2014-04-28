@@ -46,9 +46,12 @@ class Shackles(callbacks.Plugin):
         """ takes no arguments
 
         prints users which are logged in with a shackle"""
-        reply_string = urlopen("http://unimatrix21.org:8501/shackles/online", None, 0.4).readline()
+        try:
+            reply_string = urlopen("http://unimatrix21.org:8501/shackles/online", None, 0.4).readline()
 
-        irc.reply(reply_string, prefixNick=False)
+            irc.reply(reply_string, prefixNick=False)
+        except:
+            irc.reply("rashfael ist zu doof, alles ist karpott!")
 
     online = wrap(online)
 
