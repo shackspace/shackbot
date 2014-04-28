@@ -47,7 +47,7 @@ class Shackles(callbacks.Plugin):
 
         prints users which are logged in with a shackle"""
         try:
-            reply_string = urlopen("http://unimatrix21.org:8501/shackles/online", None, 0.4).readline()
+            reply_string = urlopen("http://188.40.87.130:8501/shackles/online").readline()
 
             irc.reply(reply_string, prefixNick=False)
         except URLError:
