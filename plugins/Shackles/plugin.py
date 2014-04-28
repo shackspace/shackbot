@@ -50,6 +50,8 @@ class Shackles(callbacks.Plugin):
             reply_string = urlopen("http://unimatrix21.org:8501/shackles/online", None, 0.4).readline()
 
             irc.reply(reply_string, prefixNick=False)
+        except URLError:
+            irc.reply("Sorry, I cannot reach the magical proxybridge into the shack.")
         except:
             irc.reply("rashfael ist zu doof, alles ist karpott!")
 
