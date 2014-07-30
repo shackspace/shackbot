@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 glados_quotes = [
     "The situation you are in is very dangerous.",
     "The likelihood of you dying within the next 5 seconds is 87.61%",
