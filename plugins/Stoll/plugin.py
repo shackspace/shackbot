@@ -30,7 +30,7 @@ class Stoll(callbacks.Plugin):
 
         returns a helpful quote by Dr. Axel Stoll
         """
-        irc.reply(random.choice(stoll_quotes) + " -- Dr. Axel Stoll",
+        irc.reply(random.choice(stoll_quotes) + " -- Dr. Axel Stoll(†)" ,
                 prefixNick=False)
     stoll = wrap(stoll)
 
