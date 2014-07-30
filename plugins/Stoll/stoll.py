@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 #source: http://www.lokaltermin.eu/stoll-zitate
 stoll_quotes = [
     #Physik, Mathematik, Philosophie
