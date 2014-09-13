@@ -560,5 +560,6 @@ stoll_quotes = [
     "3 mal Storgram reinen Alkohol!",
     "Das schirmt gegen radioaktive Strahlung ab.",
     "Irrtum! Gezielte Desinformation!",
+    "Mein Führersoffizier sagte mir einmal: \"Junge, du kannst dich in der Zeile irren, aber niemals in der Spalte\" Jaja, Spaß muss sein.",
 
 ]
