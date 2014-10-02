@@ -29,9 +29,30 @@
 ###
 
 from supybot.test import *
+from mock import Mock, patch
+import urllib2
 
 class ShacklesTestCase(PluginTestCase):
     plugins = ('Shackles',)
 
+    @patch('urllib2.urlopen')
+    def testOnline(self, urlopenMock):
+        readlineMock = Mock()
+        expectedResponse = 'mock server response'
+        readlineMock.readline.return_value = expectedResponse
+        urlopenMock.return_value = readlineMock
+        self.assertResponse('online', expectedResponse)
+
+    @patch('urllib2.urlopen')
+    def testURLError(self, urlopenMock):
+        expectedResponse = 'Sorry, I cannot reach the magical proxybridge into the shack.'
+        urlopenMock.side_effect = urllib2.URLError('')
+        self.assertResponse('online', expectedResponse)
+
+    @patch('urllib2.urlopen')
+    def testHTTPError(self, urlopenMock):
+        expectedResponse = 'Sorry, I cannot reach the magical proxybridge into the shack. (Code 500)'
+        urlopenMock.side_effect = urllib2.HTTPError('http://mock.mock/mock', 500, 'Internal Server Error', None, None)
+        self.assertResponse('online', expectedResponse)
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:
