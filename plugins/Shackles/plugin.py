@@ -34,7 +34,7 @@ import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 
-import urlopen
+import urllib
 
 
 class Shackles(callbacks.Plugin):
@@ -47,12 +47,12 @@ class Shackles(callbacks.Plugin):
 
         prints users which are logged in with a shackle"""
         try:
-            reply_string = urllib2.urlopen("http://shackproxy.unimatrix21.org/shackles/online").readline()
+            reply_string = urllib.urlopen("http://shackproxy.unimatrix21.org/shackles/online").readline()
 
             irc.reply(reply_string, prefixNick=False)
-        except urllib2.HTTPError, e
+        except urllib.HTTPError, e:
             irc.reply("Sorry, I cannot reach the magical proxybridge into the shack. (Code %s)" % e.code)
-        except urllib2.URLError:
+        except urllib.URLError:
             irc.reply("Sorry, I cannot reach the magical proxybridge into the shack.")
         except:
             irc.reply("rashfael ist zu doof, alles ist karpott!")
