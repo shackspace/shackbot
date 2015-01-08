@@ -27,11 +27,13 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is open
         """
-        if self.is_open():
-            irc.reply("shack is open", prefixNick=False)
-        else:
-            irc.reply("shack is not open", prefixNick=False)
-
+        status = urlopen("http://shackspace.de/sopen/text/en").read()
+        
+        if "open" in status:
+            irc.reply("shack is closed", prefixNick=False)
+        elif "closed" in status:
+            irc.reply("shack is not closed", prefixNick=False)
+          
     open = wrap(open)
 
     def close(self, irc, msg, args):
@@ -39,10 +41,8 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is closed
         """
-        if not self.is_open():
-            irc.reply("shack is closed", prefixNick=False)
-        else:
-            irc.reply("shack is not closed", prefixNick=False)
+        irc.reply("You do not have permissions to close this hackerspace. This incident will be reported.", prefixNick=True)
+
 
     close = wrap(close)
 
