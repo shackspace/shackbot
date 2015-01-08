@@ -34,10 +34,10 @@ class Open(callbacks.Plugin):
         status = urlopen("http://shackspace.de/sopen/text/en").read()
         
         if "open" in status:
-            irc.reply("shack is closed", prefixNick=False)
+            irc.reply("shack is open", prefixNick=False)
         elif "closed" in status:
-            irc.reply("shack is not closed", prefixNick=False)
-        else
+            irc.reply("shack is closed", prefixNick=False)
+        else:
             irc.reply(random.choice(self.dunno), prefixNick=False)
           
     open = wrap(open)
