@@ -21,6 +21,10 @@ class Open(callbacks.Plugin):
     def __init__(self, irc):
         self.__parent = super(Open, self)
         self.__parent.__init__(irc)
+        self.dunno = ["shack is dunnolol", "I can't tell you if the shack is open or closed", \
+            "shack is schroedinger's cat", "WARNING: HACKERSPACE STATE UNDEFINED", \
+            "Sorry, you'll have to ask the Computer Force", "Can't help you, sorry", \
+            "Old and unreliable hardware is old and unreliable; I can't help you."]
 
     def open(self, irc, msg, args):
         """takes no arguments
@@ -33,6 +37,8 @@ class Open(callbacks.Plugin):
             irc.reply("shack is closed", prefixNick=False)
         elif "closed" in status:
             irc.reply("shack is not closed", prefixNick=False)
+        else
+            irc.reply(random.choice(self.dunno), prefixNick=False)
           
     open = wrap(open)
 
