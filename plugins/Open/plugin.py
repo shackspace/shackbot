@@ -27,7 +27,7 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is open
         """
-        if "open" in self.get_shack_status():
+        if self.is_open():
             irc.reply("shack is open", prefixNick=False)
         else:
             irc.reply("shack is not open", prefixNick=False)
@@ -39,15 +39,15 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is closed
         """
-        if "close" in self.get_shack_status():
+        if not self.is_open():
             irc.reply("shack is closed", prefixNick=False)
         else:
             irc.reply("shack is not closed", prefixNick=False)
 
     close = wrap(close)
 
-    def get_shack_status(self):
-        return urlopen("http://shackspace.de/sopen/text/en").read()
+    def is_open(self):
+        return "open" in urlopen("http://shackspace.de/sopen/text/en").read()
         
 
 Class = Open
