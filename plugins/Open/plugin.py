@@ -49,12 +49,8 @@ class Open(callbacks.Plugin):
         """
         irc.reply("You do not have permissions to close this hackerspace. This incident will be reported.", prefixNick=True)
 
-
     close = wrap(close)
 
-    def is_open(self):
-        return "open" in urlopen("http://shackspace.de/sopen/text/en").read()
-        
 
 Class = Open
 
