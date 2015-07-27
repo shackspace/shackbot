@@ -13,6 +13,8 @@ import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
 
 from urllib2 import urlopen
+import json
+import random
 
 class Open(callbacks.Plugin):
     """.open and .close give the status of the stuttgart hackerspace
@@ -31,12 +33,13 @@ class Open(callbacks.Plugin):
 
         tells you whether the shack is open
         """
-        status = urlopen("http://shackspace.de/sopen/text/en").read()
+        status = urlopen("http://portal.shack:8088/status").read()
+        status = json.loads(status)
         
-        if "open" in status:
-            irc.reply("shack is open", prefixNick=False)
-        elif "closed" in status:
-            irc.reply("shack is closed", prefixNick=False)
+        if status['status'] == 'open':
+            irc.reply("shack is open.", prefixNick=False)
+        elif status['status'] == 'closed':
+            irc.reply("shack is closed.", prefixNick=False)
         else:
             irc.reply(random.choice(self.dunno), prefixNick=False)
           
