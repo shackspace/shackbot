@@ -1,4 +1,4 @@
-shackbot
-========
+ex-shackbot
+===========
 
-#shackspace supybot
+#shackspace supybot - dead now. Move on to [shackie](https://github.com/shackspace/shackie)
